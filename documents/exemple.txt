@@ -1,0 +1,16 @@
+$
+space           := 
+tab             :=	
+new_line        :=
+
+comment_open    :=/*
+comment_close   :=*/
+chiffre         :=123456789
+zero            :=0
+assign_operator :==
+$
+comment         := comment_open .comment_close.
+integer         := /chiffre/ [ | /chiffre/ , zero | ]
+variable        := $identifier$ assign_operator $integer$
+$
+|comment, variable, function|
